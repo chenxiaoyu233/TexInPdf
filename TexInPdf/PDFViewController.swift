@@ -8,6 +8,7 @@
 
 import Cocoa
 import PDFKit
+import OSLog
 
 class PDFViewController: NSViewController {
     @IBOutlet weak var PDFViewer: PDFView!
@@ -24,6 +25,19 @@ class PDFViewController: NSViewController {
         }
     }
 
+    @IBAction func AddNoteMenuItemSelected(_ sender: Any) {
+        if let curSel = PDFViewer.currentSelection {
+            os_log("you have selected something")
+        } else {
+            let alert = NSAlert()
+            alert.messageText = "Operation Fail"
+            alert.informativeText = "To use this function, you should select something"
+            alert.alertStyle = NSAlert.Style.warning
+            alert.addButton(withTitle: "OK")
+            alert.runModal()
+            return
+        }
+    }
 
 }
 
