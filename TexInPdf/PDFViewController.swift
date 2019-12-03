@@ -36,6 +36,7 @@ extension PDFViewController{
             mark.widgetControlType = .pushButtonControl
             mark.backgroundColor = .init(calibratedRed: 1.0, green: 0.5, blue: 1.0, alpha: 0.2)
             mark.color = .init(white: 1, alpha: 0)
+            mark.setValue("test message", forAnnotationKey: .textLabel)
         }
     }
     
@@ -54,6 +55,7 @@ extension PDFViewController{
     @objc func NoteButtonHitObserver(_ notification: Notification) {
         if let note: PDFAnnotation = notification.userInfo?["PDFAnnotationHit"] as! PDFAnnotation? {
             os_log("button clicked")
+            ShowAlertMessage(messageText: note.value(forAnnotationKey: .textLabel) as! String, informativeText: "") 
         }
     }
 }
