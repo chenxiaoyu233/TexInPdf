@@ -10,7 +10,7 @@ import Cocoa
 import PDFKit
 
 class MainWindowController: NSWindowController {
-   
+    
     var noteMark: PDFAnnotation? {
         didSet {
             if let child = self.contentViewController as? PDFOverTexSplitViewController {
@@ -26,28 +26,41 @@ class MainWindowController: NSWindowController {
     
     var frame: NSRect?
     
+    var currentDestination: PDFDestination?
+    var scaleFactor: CGFloat?
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         
         addNoteButtonObserver()
+        addFetchPDFViewObserver()
         SetupSinglePDFView()
     }
     
     /// Open a stand alone PDF View [the default set up]
     func SetupSinglePDFView() {
         frame = self.window?.frame
+        if self.contentViewController != nil {
+            fetchPDFView()
+        }
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         self.contentViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PDF View")) as? NSViewController
         updateRepresentedObjectInChlid()
         self.window?.setFrame(frame!, display: true)
+        pushPDFView()
     }
-   
+    
+    /// Open a split view where the pdf view is over the tex view
     func SetupPDFViewOverTexView() {
         frame = self.window?.frame
+        if self.contentViewController != nil {
+            fetchPDFView()
+        }
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         self.contentViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PDFOverTexSplitViewController")) as? NSViewController
         updateRepresentedObjectInChlid()
         self.window?.setFrame(frame!, display: true)
+        pushPDFView()
     }
     
     /// Register the observer for widget button click in PDF
@@ -80,6 +93,29 @@ class MainWindowController: NSWindowController {
         self.contentViewController?.representedObject = self.PDFObject
         if let child = self.contentViewController as? PDFOverTexSplitViewController {
             child.noteMark = self.noteMark
+        }
+    }
+    
+    func fetchPDFView() {
+        NotificationCenter.default.post(name: NSNotification.Name.init("fetchPDFViewAsk"), object: self)
+    }
+    func addFetchPDFViewObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchPDFViewObserver), name: NSNotification.Name.init("fetchPDFViewRsp"), object: nil)
+    }
+    @objc func fetchPDFViewObserver(_ notification: Notification) {
+        currentDestination = notification.userInfo?["currentDestination"] as? PDFDestination
+        scaleFactor = notification.userInfo?["scaleFactor"] as? CGFloat
+    }
+    func pushPDFView() {
+        if currentDestination != nil && scaleFactor != nil {
+            NotificationCenter.default.post(
+                name: Notification.Name.init("pushPDFAsk"),
+                object: self,
+                userInfo: [
+                    "currentDestination": currentDestination as Any,
+                    "scaleFactor": scaleFactor as Any
+                ]
+            )
         }
     }
 }

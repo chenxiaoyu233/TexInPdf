@@ -16,6 +16,8 @@ class PDFViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        addFetchPDFViewObserver()
+        addPushPDFViewObserver()
     }
 
     override var representedObject: Any? {
@@ -95,3 +97,38 @@ extension PDFViewController {
     }
 }
 
+/* MARK: - sync PDFViewer */
+extension PDFViewController {
+    func addFetchPDFViewObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(fetchPDFViewObserver),
+            name: NSNotification.Name.init("fetchPDFViewAsk"),
+            object: nil
+        )
+    }
+    @objc func fetchPDFViewObserver(_ notification: Notification) {
+        NotificationCenter.default.post(
+            name: NSNotification.Name.init("fetchPDFViewRsp"),
+            object: self,
+            userInfo: ["currentDestination": PDFViewer.currentDestination as Any,
+                       "scaleFactor": PDFViewer.scaleFactor as Any]
+        )
+    }
+    func addPushPDFViewObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(pushPDFViewObserver),
+            name: NSNotification.Name.init("pushPDFAsk"),
+            object: nil
+        )
+    }
+    @objc func pushPDFViewObserver(_ notification: Notification) {
+        if let scaleFactor = notification.userInfo?["scaleFactor"] as? CGFloat {
+            PDFViewer.scaleFactor = scaleFactor
+        }
+        if let currentDestination = notification.userInfo?["currentDestination"] as? PDFDestination {
+            PDFViewer.go(to: currentDestination)
+        }
+    }
+}
