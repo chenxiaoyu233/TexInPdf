@@ -23,10 +23,14 @@ class MainWindowController: NSWindowController {
             self.contentViewController?.representedObject = self.PDFObject
         }
     }
-    
+        
+    /// sync the windows size between two layout
     var frame: NSRect?
     
+    /// remeber the currentDestination parameter in PDFView [sync parameter between two layout]
     var currentDestination: PDFDestination?
+    
+    /// remeber the scaleFactor parameter in PDFView [sync parameter between two layout]
     var scaleFactor: CGFloat?
     
     override func windowDidLoad() {
@@ -89,6 +93,7 @@ class MainWindowController: NSWindowController {
         }
     }
     
+    /// sync the representedObject between two layout
     func updateRepresentedObjectInChlid() {
         self.contentViewController?.representedObject = self.PDFObject
         if let child = self.contentViewController as? PDFOverTexSplitViewController {
@@ -96,16 +101,29 @@ class MainWindowController: NSWindowController {
         }
     }
     
+    /// ask the information about PDFViewer
     func fetchPDFView() {
-        NotificationCenter.default.post(name: NSNotification.Name.init("fetchPDFViewAsk"), object: self)
+        NotificationCenter.default.post(
+            name: NSNotification.Name.init("fetchPDFViewAsk"),
+            object: self
+        )
     }
+    /// add the observer to listen the response of fetchPDFView
     func addFetchPDFViewObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(fetchPDFViewObserver), name: NSNotification.Name.init("fetchPDFViewRsp"), object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(fetchPDFViewObserver),
+            name: NSNotification.Name.init("fetchPDFViewRsp"),
+            object: nil
+        )
     }
+    /// record the parameter of PDFView
+    /// - Parameter notification: --
     @objc func fetchPDFViewObserver(_ notification: Notification) {
         currentDestination = notification.userInfo?["currentDestination"] as? PDFDestination
         scaleFactor = notification.userInfo?["scaleFactor"] as? CGFloat
     }
+    /// use parameters stored here to sync the PDFView in the child view
     func pushPDFView() {
         if currentDestination != nil && scaleFactor != nil {
             NotificationCenter.default.post(

@@ -477,50 +477,147 @@
             <objects>
                 <viewController title="Tex View Controller" storyboardIdentifier="Tex View" id="4Hn-k4-6xa" customClass="TexViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="N3N-0l-CFo">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="626" height="167"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L5-yU-B5A">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="hOd-0b-EZH">
-                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chT-up-6Pn" userLabel="Compile Button">
+                                <rect key="frame" x="0.0" y="137" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FmV-GP-2W6"/>
+                                    <constraint firstAttribute="width" constant="30" id="Sho-7g-MnD"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarPlayTemplate" imagePosition="only" alignment="center" borderStyle="border" transparent="YES" inset="2" id="VfD-yH-O3S">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="compileButtonClicked:" target="4Hn-k4-6xa" id="W3C-fw-Zmb"/>
+                                </connections>
+                            </button>
+                            <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ktB-d1-v1n">
+                                <rect key="frame" x="28" y="0.0" width="5" height="167"/>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Sfu-WZ-i1X" userLabel="Code Button">
+                                <rect key="frame" x="0.0" y="107" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0dc-MM-f1i"/>
+                                    <constraint firstAttribute="height" constant="30" id="R2j-D8-78C"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Button" bezelStyle="shadowlessSquare" image="NSTouchBarTextJustifiedAlignTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="rZA-Yw-cVT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="codeButtonClicked:" target="4Hn-k4-6xa" id="2Mu-9s-Gr8"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c8p-23-KPR" userLabel="Error Button">
+                                <rect key="frame" x="0.0" y="83" width="30" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6z7-po-y0R"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" title="Button" bezelStyle="shadowlessSquare" image="NSStopProgressFreestandingTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" transparent="YES" imageScaling="proportionallyDown" inset="2" id="12n-mD-41k">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="errorButtonClicked:" target="4Hn-k4-6xa" id="4af-k1-fnE"/>
+                                </connections>
+                            </button>
+                            <scrollView identifier="Code Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-Hc-snr">
+                                <rect key="frame" x="31" y="0.0" width="595" height="167"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="S0y-Lz-fT7">
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="cXv-M2-OvS">
-                                            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="J6u-wK-db8">
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="450" height="300"/>
-                                            <size key="maxSize" width="450" height="10000000"/>
+                                            <size key="minSize" width="595" height="167"/>
+                                            <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="O3T-pt-8dE">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="qdz-O2-5nn">
                                     <rect key="frame" x="-100" y="-100" width="240" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="gST-ZQ-b0Z">
-                                    <rect key="frame" x="434" y="0.0" width="16" height="300"/>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="PYS-Kd-wdA">
+                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <pdfView identifier="Tex Pdf View" hidden="YES" autoresizesSubviews="NO" wantsLayer="YES" appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-fe-Zb5" userLabel="Tex PDF View">
+                                <rect key="frame" x="31" y="0.0" width="595" height="167"/>
+                            </pdfView>
+                            <scrollView identifier="Error Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-8C-jRV">
+                                <rect key="frame" x="31" y="0.0" width="595" height="167"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Vgo-ut-YJs">
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="dOY-Gw-a2x">
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="595" height="167"/>
+                                            <size key="maxSize" width="595" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="eJK-sN-FuU">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2Qn-x0-WdN">
+                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0L5-yU-B5A" secondAttribute="trailing" id="9ST-dw-qXS"/>
-                            <constraint firstItem="0L5-yU-B5A" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" id="EuB-cp-Hzf"/>
-                            <constraint firstItem="0L5-yU-B5A" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="RXw-6x-B16"/>
-                            <constraint firstAttribute="bottom" secondItem="0L5-yU-B5A" secondAttribute="bottom" id="eN8-02-hXE"/>
+                            <constraint firstAttribute="trailing" secondItem="TeG-fe-Zb5" secondAttribute="trailing" id="1z8-eS-0sW"/>
+                            <constraint firstItem="Sfu-WZ-i1X" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" constant="30" id="57m-9f-wcd"/>
+                            <constraint firstAttribute="bottom" secondItem="ktB-d1-v1n" secondAttribute="bottom" id="6pH-ze-ymh"/>
+                            <constraint firstItem="ktB-d1-v1n" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" constant="30" id="78n-Q6-6yp"/>
+                            <constraint firstItem="tCw-Hc-snr" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="8Ru-Pc-EPR"/>
+                            <constraint firstAttribute="bottom" secondItem="TeG-fe-Zb5" secondAttribute="bottom" id="8du-mO-pGT"/>
+                            <constraint firstItem="h1W-8C-jRV" firstAttribute="leading" secondItem="ktB-d1-v1n" secondAttribute="trailing" id="I3H-UR-kOO"/>
+                            <constraint firstAttribute="trailing" secondItem="h1W-8C-jRV" secondAttribute="trailing" id="Kiy-fb-ylm"/>
+                            <constraint firstAttribute="bottom" secondItem="h1W-8C-jRV" secondAttribute="bottom" id="LTF-c0-Dnb"/>
+                            <constraint firstItem="ktB-d1-v1n" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="Nrz-yL-0kO"/>
+                            <constraint firstItem="TeG-fe-Zb5" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="Okd-2z-anF"/>
+                            <constraint firstItem="Sfu-WZ-i1X" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" id="STH-Mo-i0V"/>
+                            <constraint firstItem="h1W-8C-jRV" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="SX2-hs-ULk"/>
+                            <constraint firstItem="c8p-23-KPR" firstAttribute="top" secondItem="Sfu-WZ-i1X" secondAttribute="bottom" id="W5D-l4-q8Z"/>
+                            <constraint firstAttribute="trailing" secondItem="tCw-Hc-snr" secondAttribute="trailing" id="ZXl-4q-c7e"/>
+                            <constraint firstItem="c8p-23-KPR" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" id="aXR-zO-53D"/>
+                            <constraint firstAttribute="bottom" secondItem="tCw-Hc-snr" secondAttribute="bottom" id="bGg-pX-UOJ"/>
+                            <constraint firstItem="TeG-fe-Zb5" firstAttribute="leading" secondItem="ktB-d1-v1n" secondAttribute="trailing" id="bns-5H-t5T"/>
+                            <constraint firstItem="chT-up-6Pn" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" id="fr6-ES-znr"/>
+                            <constraint firstItem="chT-up-6Pn" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="jAx-7x-TC4"/>
+                            <constraint firstItem="tCw-Hc-snr" firstAttribute="leading" secondItem="ktB-d1-v1n" secondAttribute="trailing" id="kS4-mz-FBy"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="cXv-M2-OvS" id="AED-Vk-brL"/>
+                        <outlet property="codeButton" destination="Sfu-WZ-i1X" id="6KX-1B-tug"/>
+                        <outlet property="codeScrollView" destination="tCw-Hc-snr" id="4EI-fm-IkP"/>
+                        <outlet property="codeView" destination="J6u-wK-db8" id="sI0-VG-cn8"/>
+                        <outlet property="compileButton" destination="chT-up-6Pn" id="vLr-e4-rpQ"/>
+                        <outlet property="errorButton" destination="c8p-23-KPR" id="aEP-hY-H9R"/>
+                        <outlet property="errorScrollView" destination="h1W-8C-jRV" id="50Z-JU-eaK"/>
+                        <outlet property="errorView" destination="dOY-Gw-a2x" id="kbY-R7-cCu"/>
+                        <outlet property="pdfView" destination="TeG-fe-Zb5" id="46r-Mj-7i2"/>
                     </connections>
                 </viewController>
                 <customObject id="exf-RT-Aon" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="1100"/>
+            <point key="canvasLocation" x="547" y="1033.5"/>
         </scene>
         <!--PDF Over Tex Split View Controller-->
         <scene sceneID="aoK-kN-etl">
@@ -530,7 +627,7 @@
                         <splitViewItem id="12I-QX-IpW"/>
                         <splitViewItem id="gXe-V5-bsY"/>
                     </splitViewItems>
-                    <splitView key="splitView" translatesAutoresizingMaskIntoConstraints="NO" id="6Uv-Bd-tN2">
+                    <splitView key="splitView" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="6Uv-Bd-tN2">
                         <rect key="frame" x="-389" y="0.0" width="389" height="288"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -548,4 +645,9 @@
             <point key="canvasLocation" x="-170" y="873"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSStopProgressFreestandingTemplate" width="14" height="14"/>
+        <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
+        <image name="NSTouchBarTextJustifiedAlignTemplate" width="14" height="30"/>
+    </resources>
 </document>

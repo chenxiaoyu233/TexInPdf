@@ -41,7 +41,7 @@ extension PDFViewController{
             mark.widgetControlType = .pushButtonControl
             mark.backgroundColor = .init(calibratedRed: 1.0, green: 0.5, blue: 1.0, alpha: 0.2)
             mark.color = .init(white: 1, alpha: 0)
-            mark.setValue("test message", forAnnotationKey: .textLabel)
+            mark.setValue("", forAnnotationKey: .textLabel)
         }
     }
     
@@ -99,6 +99,7 @@ extension PDFViewController {
 
 /* MARK: - sync PDFViewer */
 extension PDFViewController {
+    /// add the observer for listening the request for fetch the PDFView
     func addFetchPDFViewObserver() {
         NotificationCenter.default.addObserver(
             self,
@@ -107,6 +108,8 @@ extension PDFViewController {
             object: nil
         )
     }
+    /// post the PDFView back
+    /// - Parameter notification: --
     @objc func fetchPDFViewObserver(_ notification: Notification) {
         NotificationCenter.default.post(
             name: NSNotification.Name.init("fetchPDFViewRsp"),
@@ -115,6 +118,7 @@ extension PDFViewController {
                        "scaleFactor": PDFViewer.scaleFactor as Any]
         )
     }
+    /// add the listener for the request for push the PDFView [sync]
     func addPushPDFViewObserver() {
         NotificationCenter.default.addObserver(
             self,
@@ -123,6 +127,8 @@ extension PDFViewController {
             object: nil
         )
     }
+    /// update the PDFView from the post
+    /// - Parameter notification: --
     @objc func pushPDFViewObserver(_ notification: Notification) {
         if let scaleFactor = notification.userInfo?["scaleFactor"] as? CGFloat {
             PDFViewer.scaleFactor = scaleFactor
