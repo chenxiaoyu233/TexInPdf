@@ -430,7 +430,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="PDF Window Controller" id="jGA-0Y-lOj" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Main Window Controller" id="jGA-0Y-lOj" customClass="MainWindowController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -440,50 +440,112 @@
                             <outlet property="delegate" destination="jGA-0Y-lOj" id="98r-iN-zZc"/>
                         </connections>
                     </window>
-                    <connections>
-                        <segue destination="5gI-5U-AMq" kind="relationship" relationship="window.shadowedContentViewController" id="nsd-lR-9xd"/>
-                    </connections>
                 </windowController>
                 <customObject id="6f7-a7-6o1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--PDF View Controller-->
+        <scene sceneID="WNe-gD-sL4">
             <objects>
-                <viewController id="5gI-5U-AMq" customClass="PDFViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController title="PDF View Controller" storyboardIdentifier="PDF View" id="7IO-Eh-j4Q" customClass="PDFViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="4Di-1J-F4f">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-c9-G0C">
-                                <rect key="frame" x="116" y="125" width="248" height="21"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Your document contents here" id="Cc7-nU-5Mv">
-                                    <font key="font" metaFont="system" size="18"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <pdfView autoresizesSubviews="NO" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WC8-ed-FSx">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <pdfView autoresizesSubviews="NO" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l25-tz-6Gs">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                             </pdfView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="WC8-ed-FSx" secondAttribute="bottom" id="5he-8W-nJQ"/>
-                            <constraint firstItem="WC8-ed-FSx" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="R7F-9i-k4h"/>
-                            <constraint firstAttribute="centerY" secondItem="TyV-c9-G0C" secondAttribute="centerY" id="Rxv-Yd-F43"/>
-                            <constraint firstAttribute="centerX" secondItem="TyV-c9-G0C" secondAttribute="centerX" id="Zn4-Y4-lbg"/>
-                            <constraint firstAttribute="trailing" secondItem="WC8-ed-FSx" secondAttribute="trailing" id="exF-0I-7uh"/>
-                            <constraint firstItem="WC8-ed-FSx" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="tJe-Pu-Ktf"/>
+                            <constraint firstAttribute="bottom" secondItem="l25-tz-6Gs" secondAttribute="bottom" id="3xs-1i-Fv5"/>
+                            <constraint firstItem="l25-tz-6Gs" firstAttribute="top" secondItem="4Di-1J-F4f" secondAttribute="top" id="A1z-X0-7Re"/>
+                            <constraint firstItem="l25-tz-6Gs" firstAttribute="leading" secondItem="4Di-1J-F4f" secondAttribute="leading" id="Ty1-nw-mhN"/>
+                            <constraint firstAttribute="trailing" secondItem="l25-tz-6Gs" secondAttribute="trailing" id="stf-Rs-bb3"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="PDFViewer" destination="WC8-ed-FSx" id="e4S-Fj-iHA"/>
+                        <outlet property="PDFViewer" destination="l25-tz-6Gs" id="vLY-tV-cUK"/>
                     </connections>
                 </viewController>
-                <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="9w2-kB-Px2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="459" y="673"/>
+        </scene>
+        <!--Tex View Controller-->
+        <scene sceneID="xMj-Zd-Yje">
+            <objects>
+                <viewController title="Tex View Controller" storyboardIdentifier="Tex View" id="4Hn-k4-6xa" customClass="TexViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="N3N-0l-CFo">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0L5-yU-B5A">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="hOd-0b-EZH">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="cXv-M2-OvS">
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="450" height="300"/>
+                                            <size key="maxSize" width="450" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="O3T-pt-8dE">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="gST-ZQ-b0Z">
+                                    <rect key="frame" x="434" y="0.0" width="16" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0L5-yU-B5A" secondAttribute="trailing" id="9ST-dw-qXS"/>
+                            <constraint firstItem="0L5-yU-B5A" firstAttribute="leading" secondItem="N3N-0l-CFo" secondAttribute="leading" id="EuB-cp-Hzf"/>
+                            <constraint firstItem="0L5-yU-B5A" firstAttribute="top" secondItem="N3N-0l-CFo" secondAttribute="top" id="RXw-6x-B16"/>
+                            <constraint firstAttribute="bottom" secondItem="0L5-yU-B5A" secondAttribute="bottom" id="eN8-02-hXE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="cXv-M2-OvS" id="AED-Vk-brL"/>
+                    </connections>
+                </viewController>
+                <customObject id="exf-RT-Aon" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="1100"/>
+        </scene>
+        <!--PDF Over Tex Split View Controller-->
+        <scene sceneID="aoK-kN-etl">
+            <objects>
+                <splitViewController title="PDF Over Tex Split View Controller" storyboardIdentifier="PDFOverTexSplitViewController" id="zv0-Db-6h5" customClass="PDFOverTexSplitViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="12I-QX-IpW"/>
+                        <splitViewItem id="gXe-V5-bsY"/>
+                    </splitViewItems>
+                    <splitView key="splitView" translatesAutoresizingMaskIntoConstraints="NO" id="6Uv-Bd-tN2">
+                        <rect key="frame" x="-389" y="0.0" width="389" height="288"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="zv0-Db-6h5" id="H3T-VD-Jpe"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="6Uv-Bd-tN2" id="FPP-nn-TWw"/>
+                        <segue destination="7IO-Eh-j4Q" kind="relationship" relationship="splitItems" id="RTb-ia-LfZ"/>
+                        <segue destination="4Hn-k4-6xa" kind="relationship" relationship="splitItems" id="Urv-NE-VAz"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="6W5-wT-1ew" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-496.5" y="892"/>
         </scene>
     </scenes>
 </document>

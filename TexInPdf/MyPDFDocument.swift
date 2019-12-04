@@ -13,8 +13,7 @@ import os.log
 class MyPDFDocument: NSDocument {
     
     var pdfDocument: PDFDocument = PDFDocument.init()
-    var pdfViewController: PDFViewController!
-    
+
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
@@ -27,11 +26,10 @@ class MyPDFDocument: NSDocument {
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PDF Window Controller")) as! NSWindowController
+        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Main Window Controller")) as! NSWindowController
         addWindowController(windowController)
-        if let VC = windowController.contentViewController as? PDFViewController {
-            pdfViewController = VC
-            pdfViewController.PDFViewer.document = pdfDocument
+        if let WC = windowController as? MainWindowController {
+            WC.PDFObject = pdfDocument
         }
     }
 

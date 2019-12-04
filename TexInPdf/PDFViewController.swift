@@ -16,12 +16,15 @@ class PDFViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addNoteButtonObserver()
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
+            PDFViewer.document = self.representedObject as? PDFDocument
+            for child in self.children {
+                child.representedObject = self.representedObject
+            }
         }
     }
 }
@@ -40,24 +43,7 @@ extension PDFViewController{
         }
     }
     
-    /// Register the observer for widget button click in PDF
-    func addNoteButtonObserver() {
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(NoteButtonHitObserver(_:)),
-            name: .PDFViewAnnotationHit,
-            object: PDFViewer
-        )
-    }
-    
-    /// TODO: Open/Close the note content attached to the widget button in the PDF
-    /// - Parameter notification: Given by the NotificationCenter
-    @objc func NoteButtonHitObserver(_ notification: Notification) {
-        if let note: PDFAnnotation = notification.userInfo?["PDFAnnotationHit"] as! PDFAnnotation? {
-            os_log("button clicked")
-            ShowAlertMessage(messageText: note.value(forAnnotationKey: .textLabel) as! String, informativeText: "") 
-        }
-    }
+  
 }
 
 /* MARK: - functions */

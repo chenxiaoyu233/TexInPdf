@@ -14,6 +14,9 @@
 		FF045AA72393CF4300C1A4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA52393CF4300C1A4D2 /* Main.storyboard */; };
 		FF045AB32393CF4300C1A4D2 /* TexInPdfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045AB22393CF4300C1A4D2 /* TexInPdfTests.swift */; };
 		FF045ABE2393CF4300C1A4D2 /* TexInPdfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045ABD2393CF4300C1A4D2 /* TexInPdfUITests.swift */; };
+		FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD64B23977875000451BC /* MainWindowController.swift */; };
+		FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD64D23977F1F000451BC /* TexViewController.swift */; };
+		FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		FF045AB92393CF4300C1A4D2 /* TexInPdfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TexInPdfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF045ABD2393CF4300C1A4D2 /* TexInPdfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexInPdfUITests.swift; sourceTree = "<group>"; };
 		FF045ABF2393CF4300C1A4D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF3DD64B23977875000451BC /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		FF3DD64D23977F1F000451BC /* TexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexViewController.swift; sourceTree = "<group>"; };
+		FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOverTexSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 		FF045A9C2393CF4000C1A4D2 /* TexInPdf */ = {
 			isa = PBXGroup;
 			children = (
+				FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */,
 				FF045A9D2393CF4000C1A4D2 /* AppDelegate.swift */,
 				FF045A9F2393CF4000C1A4D2 /* PDFViewController.swift */,
+				FF3DD64B23977875000451BC /* MainWindowController.swift */,
 				FF045AA12393CF4000C1A4D2 /* MyPDFDocument.swift */,
 				FF045AA32393CF4300C1A4D2 /* Assets.xcassets */,
 				FF045AA52393CF4300C1A4D2 /* Main.storyboard */,
+				FF3DD64D23977F1F000451BC /* TexViewController.swift */,
 				FF045AA82393CF4300C1A4D2 /* Info.plist */,
 				FF045AA92393CF4300C1A4D2 /* TexInPdf.entitlements */,
 			);
@@ -258,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF045AA02393CF4000C1A4D2 /* PDFViewController.swift in Sources */,
+				FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */,
+				FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */,
 				FF045A9E2393CF4000C1A4D2 /* AppDelegate.swift in Sources */,
+				FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */,
 				FF045AA22393CF4000C1A4D2 /* MyPDFDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
