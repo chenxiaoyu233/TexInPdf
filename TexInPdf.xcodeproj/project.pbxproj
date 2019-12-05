@@ -10,13 +10,14 @@
 		FF045A9E2393CF4000C1A4D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045A9D2393CF4000C1A4D2 /* AppDelegate.swift */; };
 		FF045AA02393CF4000C1A4D2 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045A9F2393CF4000C1A4D2 /* PDFViewController.swift */; };
 		FF045AA22393CF4000C1A4D2 /* MyPDFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045AA12393CF4000C1A4D2 /* MyPDFDocument.swift */; };
-		FF045AA42393CF4300C1A4D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA32393CF4300C1A4D2 /* Assets.xcassets */; };
 		FF045AA72393CF4300C1A4D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA52393CF4300C1A4D2 /* Main.storyboard */; };
 		FF045AB32393CF4300C1A4D2 /* TexInPdfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045AB22393CF4300C1A4D2 /* TexInPdfTests.swift */; };
 		FF045ABE2393CF4300C1A4D2 /* TexInPdfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF045ABD2393CF4300C1A4D2 /* TexInPdfUITests.swift */; };
 		FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD64B23977875000451BC /* MainWindowController.swift */; };
 		FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD64D23977F1F000451BC /* TexViewController.swift */; };
 		FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */; };
+		FFE9881A2399275000A65AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA32393CF4300C1A4D2 /* Assets.xcassets */; };
+		FFE9882323994D5400A65AFD /* TexCompile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFE9882123994D5400A65AFD /* TexCompile.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,10 @@
 		FF3DD64B23977875000451BC /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		FF3DD64D23977F1F000451BC /* TexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexViewController.swift; sourceTree = "<group>"; };
 		FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFOverTexSplitViewController.swift; sourceTree = "<group>"; };
+		FFE9881F2399373B00A65AFD /* TexInPdfDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TexInPdfDebug.entitlements; sourceTree = "<group>"; };
+		FFE9882023994D5400A65AFD /* TexInPdf-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TexInPdf-Bridging-Header.h"; sourceTree = "<group>"; };
+		FFE9882123994D5400A65AFD /* TexCompile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TexCompile.cpp; sourceTree = "<group>"; };
+		FFE9882223994D5400A65AFD /* TexCompile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TexCompile.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +109,7 @@
 		FF045A9C2393CF4000C1A4D2 /* TexInPdf */ = {
 			isa = PBXGroup;
 			children = (
+				FFE9881F2399373B00A65AFD /* TexInPdfDebug.entitlements */,
 				FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */,
 				FF045A9D2393CF4000C1A4D2 /* AppDelegate.swift */,
 				FF045A9F2393CF4000C1A4D2 /* PDFViewController.swift */,
@@ -112,8 +118,11 @@
 				FF045AA32393CF4300C1A4D2 /* Assets.xcassets */,
 				FF045AA52393CF4300C1A4D2 /* Main.storyboard */,
 				FF3DD64D23977F1F000451BC /* TexViewController.swift */,
+				FFE9882123994D5400A65AFD /* TexCompile.cpp */,
+				FFE9882223994D5400A65AFD /* TexCompile.hpp */,
 				FF045AA82393CF4300C1A4D2 /* Info.plist */,
 				FF045AA92393CF4300C1A4D2 /* TexInPdf.entitlements */,
+				FFE9882023994D5400A65AFD /* TexInPdf-Bridging-Header.h */,
 			);
 			path = TexInPdf;
 			sourceTree = "<group>";
@@ -204,6 +213,7 @@
 				TargetAttributes = {
 					FF045A992393CF4000C1A4D2 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 					FF045AAD2393CF4300C1A4D2 = {
 						CreatedOnToolsVersion = 11.1;
@@ -240,7 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF045AA42393CF4300C1A4D2 /* Assets.xcassets in Resources */,
+				FFE9881A2399275000A65AFD /* Assets.xcassets in Resources */,
 				FF045AA72393CF4300C1A4D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +281,7 @@
 				FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */,
 				FF045A9E2393CF4000C1A4D2 /* AppDelegate.swift in Sources */,
 				FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */,
+				FFE9882323994D5400A65AFD /* TexCompile.cpp in Sources */,
 				FF045AA22393CF4000C1A4D2 /* MyPDFDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,9 +446,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = TexInPdf/TexInPdf.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TexInPdf/TexInPdfDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TH5R8XZ98S;
 				INFOPLIST_FILE = TexInPdf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -445,6 +459,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaoyu233.TexInPdf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TexInPdf/TexInPdf-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -453,9 +469,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TexInPdf/TexInPdf.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TH5R8XZ98S;
 				INFOPLIST_FILE = TexInPdf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -463,6 +482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaoyu233.TexInPdf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TexInPdf/TexInPdf-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
