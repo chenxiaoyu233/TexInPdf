@@ -161,6 +161,10 @@ class TexViewController: NSViewController {
                     self.didTerminateNotificationObserver = nil
                 }
                 self.errorView.string += String(data: self.pipe?.fileHandleForReading.availableData ?? Data(), encoding: .utf8) ?? ""
+                if let pdfdata = NSData.init(contentsOfFile:  "/Users/chenxiaoyu/Desktop/tex/test.pdf") {
+                    self.pdfView.document = PDFDocument.init(data: pdfdata as Data)
+                    self.showPDFView()
+                }
             }
     }
 }
