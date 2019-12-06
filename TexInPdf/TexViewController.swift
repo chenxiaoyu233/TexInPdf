@@ -86,21 +86,6 @@ class TexViewController: NSViewController {
             return
         }
         
-        /*let rubyFileName = name + ".rb"
-        let rubyFile = URL(fileURLWithPath: rubyFileName, isDirectory: false)
-        do {try
-            """
-                system 'touch \(name + ".pdf") \(name + ".aux") \(name + ".log")'
-                system 'chmod o+w \(name + ".pdf") \(name + ".aux") \(name + ".log")'
-                system '/Library/TeX/texbin/latex \(fileName)'
-            """.write(to: rubyFile, atomically: true, encoding: .utf8)}
-        catch {
-            errorView.string = "[Fail] can not write code to file\n"
-            errorView.string += error.localizedDescription
-            showErrorView()
-            return
-        }*/
-        
         print(fileName)
         startCompiler(fileName)
     }
@@ -119,14 +104,22 @@ class TexViewController: NSViewController {
         env["PATH"] = "/Library/TeX/texbin/:" + (path ?? "")
         compiler.environment = env
         compiler.executableURL = URL.init(fileURLWithPath: "/Library/TeX/texbin/latexmk")
-        compiler.arguments = ["-xelatex", fileName, "-output-directory=/Users/chenxiaoyu/Desktop/tex/"]
+        compiler.arguments = ["-xelatex", fileName, "-output-directory=/Users/chenxiaoyu/Desktop/tex/", "-interaction=nonstopmode"]
         compiler.currentDirectoryPath = NSTemporaryDirectory()
         pipe = Pipe()
         compiler.standardError = pipe
         compiler.standardOutput = pipe
-        pipe?.fileHandleForReading.waitForDataInBackgroundAndNotify()
-        addNSFileHandleDataAvailableObserver()
-        addDidTerminateNotificationObserver()
+        addCompilerTerminateObserver(target: compiler)
+        pipe?.fileHandleForReading.readabilityHandler = {handle in
+            let data = self.pipe?.fileHandleForReading.availableData ?? Data()
+            let pipeStr = String(data: data, encoding: .utf8) ?? ""
+            if pipeStr != "" {
+                DispatchQueue.main.sync {
+                    self.errorView.string += pipeStr
+                    self.errorView.scrollToEndOfDocument(nil)
+                }
+            }
+        }
         
         self.errorView.string = ""
         do {
@@ -138,29 +131,17 @@ class TexViewController: NSViewController {
         
     }
     
-    var NSFileHandleDataAvailableObserver: NSObjectProtocol?
-    func addNSFileHandleDataAvailableObserver() {
-        NSFileHandleDataAvailableObserver =
-            NotificationCenter.default.addObserver(forName:.NSFileHandleDataAvailable,object: nil, queue: nil) {
-                notification in
-                let data = self.pipe?.fileHandleForReading.readDataToEndOfFile() ?? Data()
-                let str = String(data: data, encoding: .utf8) ?? ""
-                self.errorView.string += str
-            }
-    }
-    
-    var didTerminateNotificationObserver: NSObjectProtocol?
-    func addDidTerminateNotificationObserver() {
-        didTerminateNotificationObserver =
+    var compilerTerminateObserver: NSObjectProtocol?
+    func addCompilerTerminateObserver(target: Any?) {
+        compilerTerminateObserver =
             NotificationCenter.default.addObserver(forName: Process.didTerminateNotification, object: nil, queue: nil){
                 notification in
-                if self.NSFileHandleDataAvailableObserver != nil { NotificationCenter.default.removeObserver(self.NSFileHandleDataAvailableObserver!)
-                    self.NSFileHandleDataAvailableObserver = nil
-                }
-                if self.didTerminateNotificationObserver != nil { NotificationCenter.default.removeObserver(self.didTerminateNotificationObserver!)
-                    self.didTerminateNotificationObserver = nil
+                if self.compilerTerminateObserver != nil { NotificationCenter.default.removeObserver(self.compilerTerminateObserver!)
+                    self.compilerTerminateObserver = nil
                 }
                 self.errorView.string += String(data: self.pipe?.fileHandleForReading.availableData ?? Data(), encoding: .utf8) ?? ""
+                self.pipe?.fileHandleForReading.readabilityHandler = nil
+                self.pipe = nil
                 if let pdfdata = NSData.init(contentsOfFile:  "/Users/chenxiaoyu/Desktop/tex/test.pdf") {
                     self.pdfView.document = PDFDocument.init(data: pdfdata as Data)
                     self.showPDFView()
