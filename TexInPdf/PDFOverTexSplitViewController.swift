@@ -14,6 +14,7 @@ class PDFOverTexSplitViewController: NSSplitViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        addSyncTexPanelWidthObserver()
     }
 
     override var representedObject: Any? {
@@ -28,6 +29,22 @@ class PDFOverTexSplitViewController: NSSplitViewController {
         didSet {
             splitViewItems[1].viewController.representedObject = self.noteMark
         }
+    }
+    
+    var syncTexPanelWidthObserver: NSObjectProtocol?
+    func addSyncTexPanelWidthObserver() {
+        syncTexPanelWidthObserver =
+            NotificationCenter.default.addObserver(forName: .PDFViewScaleChanged, object: nil, queue: nil) {
+                notification in
+                let pdfViewController = self.splitViewItems[0].viewController as! PDFViewController
+                if let pdfView = pdfViewController.PDFViewer {
+                    NotificationCenter.default.post(
+                        name: NSNotification.Name("syncTexPanelWidth:pdfView"),
+                        object: self,
+                        userInfo: ["pdfView": pdfView]
+                    )
+                }
+            }
     }
     
 }

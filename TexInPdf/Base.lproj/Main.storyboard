@@ -619,10 +619,10 @@
             </objects>
             <point key="canvasLocation" x="24" y="1731"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Tex Resize Panel Controller-->
         <scene sceneID="x5k-Gx-DJ4">
             <objects>
-                <splitViewController id="rim-fc-1xg" sceneMemberID="viewController">
+                <splitViewController id="rim-fc-1xg" customClass="TexResizePanelController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="Idn-Sz-1tP"/>
                         <splitViewItem id="qLq-vA-0Qi"/>
@@ -636,7 +636,10 @@
                         </connections>
                     </splitView>
                     <connections>
+                        <outlet property="resizePanelLeft" destination="Idn-Sz-1tP" id="FG2-Kx-bXW"/>
+                        <outlet property="resizePanelRight" destination="Zww-Ta-PBB" id="Z85-VA-9DB"/>
                         <outlet property="splitView" destination="fei-XH-wpb" id="x6k-cB-o2Y"/>
+                        <outlet property="texviewItem" destination="qLq-vA-0Qi" id="ric-8d-Shg"/>
                         <segue destination="VZn-tx-TJ4" kind="relationship" relationship="splitItems" id="eGL-Nl-R5D"/>
                         <segue destination="4Hn-k4-6xa" kind="relationship" relationship="splitItems" id="kOq-7S-CUi"/>
                         <segue destination="WeK-Ca-Mdu" kind="relationship" relationship="splitItems" id="KOU-uZ-aFd"/>

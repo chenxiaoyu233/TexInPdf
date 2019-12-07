@@ -18,6 +18,7 @@
 		FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */; };
 		FFE9881A2399275000A65AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA32393CF4300C1A4D2 /* Assets.xcassets */; };
 		FFE9882323994D5400A65AFD /* TexCompile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FFE9882123994D5400A65AFD /* TexCompile.cpp */; };
+		FFE98825239B8D6500A65AFD /* TexResizePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FFE9882023994D5400A65AFD /* TexInPdf-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TexInPdf-Bridging-Header.h"; sourceTree = "<group>"; };
 		FFE9882123994D5400A65AFD /* TexCompile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TexCompile.cpp; sourceTree = "<group>"; };
 		FFE9882223994D5400A65AFD /* TexCompile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TexCompile.hpp; sourceTree = "<group>"; };
+		FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexResizePanelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				FFE9881F2399373B00A65AFD /* TexInPdfDebug.entitlements */,
 				FF3DD65723979316000451BC /* PDFOverTexSplitViewController.swift */,
+				FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */,
 				FF045A9D2393CF4000C1A4D2 /* AppDelegate.swift */,
 				FF045A9F2393CF4000C1A4D2 /* PDFViewController.swift */,
 				FF3DD64B23977875000451BC /* MainWindowController.swift */,
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE98825239B8D6500A65AFD /* TexResizePanelController.swift in Sources */,
 				FF045AA02393CF4000C1A4D2 /* PDFViewController.swift in Sources */,
 				FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */,
 				FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */,
