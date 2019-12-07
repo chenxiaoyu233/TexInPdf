@@ -527,15 +527,15 @@
                             <scrollView identifier="Code Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-Hc-snr">
                                 <rect key="frame" x="31" y="0.0" width="595" height="167"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="S0y-Lz-fT7">
-                                    <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="J6u-wK-db8">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="580" height="167"/>
+                                            <size key="minSize" width="595" height="167"/>
                                             <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -546,25 +546,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="PYS-Kd-wdA">
-                                    <rect key="frame" x="580" y="0.0" width="15" height="167"/>
+                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <pdfView identifier="Tex Pdf View" hidden="YES" autoresizesSubviews="NO" wantsLayer="YES" appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-fe-Zb5" userLabel="Tex PDF View">
+                            <pdfView identifier="Tex Pdf View" hidden="YES" autoresizesSubviews="NO" wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-fe-Zb5" userLabel="Tex PDF View">
                                 <rect key="frame" x="31" y="0.0" width="595" height="167"/>
                             </pdfView>
                             <scrollView identifier="Error Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-8C-jRV">
                                 <rect key="frame" x="31" y="0.0" width="595" height="167"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Vgo-ut-YJs">
-                                    <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="dOY-Gw-a2x">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="580" height="167"/>
+                                            <size key="minSize" width="595" height="167"/>
                                             <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -575,7 +575,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2Qn-x0-WdN">
-                                    <rect key="frame" x="580" y="0.0" width="15" height="167"/>
+                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -617,7 +617,60 @@
                 </viewController>
                 <customObject id="exf-RT-Aon" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547" y="1033.5"/>
+            <point key="canvasLocation" x="24" y="1731"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="x5k-Gx-DJ4">
+            <objects>
+                <splitViewController id="rim-fc-1xg" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="Idn-Sz-1tP"/>
+                        <splitViewItem id="qLq-vA-0Qi"/>
+                        <splitViewItem id="Zww-Ta-PBB"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="fei-XH-wpb">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="rim-fc-1xg" id="G0t-R0-cA2"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="fei-XH-wpb" id="x6k-cB-o2Y"/>
+                        <segue destination="VZn-tx-TJ4" kind="relationship" relationship="splitItems" id="eGL-Nl-R5D"/>
+                        <segue destination="4Hn-k4-6xa" kind="relationship" relationship="splitItems" id="kOq-7S-CUi"/>
+                        <segue destination="WeK-Ca-Mdu" kind="relationship" relationship="splitItems" id="KOU-uZ-aFd"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="Jfw-QB-93q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="1351"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ipP-v2-yla">
+            <objects>
+                <viewController id="VZn-tx-TJ4" sceneMemberID="viewController">
+                    <view key="view" id="wLz-jM-7fM">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="phS-mb-WQi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="1117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7oo-PS-sh8">
+            <objects>
+                <viewController id="WeK-Ca-Mdu" sceneMemberID="viewController">
+                    <view key="view" id="6gD-bL-5sR">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="a7V-sG-UNB" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="590" y="1492"/>
         </scene>
         <!--PDF Over Tex Split View Controller-->
         <scene sceneID="aoK-kN-etl">
@@ -625,7 +678,7 @@
                 <splitViewController title="PDF Over Tex Split View Controller" storyboardIdentifier="PDFOverTexSplitViewController" id="zv0-Db-6h5" customClass="PDFOverTexSplitViewController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="12I-QX-IpW"/>
-                        <splitViewItem id="gXe-V5-bsY"/>
+                        <splitViewItem id="SDz-FW-h4u"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="6Uv-Bd-tN2">
                         <rect key="frame" x="-389" y="0.0" width="389" height="288"/>
@@ -637,7 +690,7 @@
                     <connections>
                         <outlet property="splitView" destination="6Uv-Bd-tN2" id="FPP-nn-TWw"/>
                         <segue destination="7IO-Eh-j4Q" kind="relationship" relationship="splitItems" id="RTb-ia-LfZ"/>
-                        <segue destination="4Hn-k4-6xa" kind="relationship" relationship="splitItems" id="Urv-NE-VAz"/>
+                        <segue destination="rim-fc-1xg" kind="relationship" relationship="splitItems" id="EGW-cd-Zw9"/>
                     </connections>
                 </splitViewController>
                 <customObject id="6W5-wT-1ew" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -18,7 +18,7 @@ class PDFViewController: NSViewController {
         // Do any additional setup after loading the view.
         addFetchPDFViewObserver()
         addPushPDFViewObserver()
-        PDFViewer.backgroundColor = NSColor.white
+        //PDFViewer.backgroundColor = NSColor.white
     }
 
     override var representedObject: Any? {
