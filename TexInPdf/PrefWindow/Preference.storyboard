@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="UHr-Qs-r0A">
+            <objects>
+                <windowController id="Kew-8J-tTz" customClass="PrefWindowController" customModule="TexInPdf" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="WCl-l4-7JM">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="323" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <toolbar key="toolbar" implicitIdentifier="397F402A-9EC2-40B1-8B3C-2689EBCF8549" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="PsN-x7-VrX">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="ikD-7K-hcy"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="V7n-z7-2Vr"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="OIa-w7-xGh"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="7Yn-kl-iT6"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="VnL-Pc-FpL"/>
+                                <toolbarItem implicitItemIdentifier="F533D52C-50CE-4884-A93A-747C8E0639E8" label="Latex Template" paletteLabel="Latex Template" tag="-1" image="NSListViewTemplate" selectable="YES" id="ZwG-KS-VKr">
+                                    <size key="minSize" width="14" height="10"/>
+                                    <size key="maxSize" width="14" height="10"/>
+                                    <connections>
+                                        <action selector="LatexTemplateToolbarItemClicked:" target="Kew-8J-tTz" id="q3b-vQ-j2r"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="ZwG-KS-VKr"/>
+                            </defaultToolbarItems>
+                            <connections>
+                                <outlet property="delegate" destination="WCl-l4-7JM" id="tTX-xQ-eqw"/>
+                            </connections>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="Kew-8J-tTz" id="oKU-GE-eWG"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <outlet property="LatexTemplateToolbarItem" destination="ZwG-KS-VKr" id="65k-IH-IvE"/>
+                    </connections>
+                </windowController>
+                <customObject id="0Q0-zA-tip" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="124"/>
+        </scene>
+        <!--Latex Template Preference View Controller-->
+        <scene sceneID="ijS-Fl-7E9">
+            <objects>
+                <viewController title="Latex Template Preference View Controller" id="AW1-21-3JJ" sceneMemberID="viewController">
+                    <view key="view" id="g7i-oF-LSS">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy7-FQ-K6S">
+                                <rect key="frame" x="20" y="61" width="410" height="219"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="cHJ-vA-d2C">
+                                    <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="s65-oV-RUd">
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="219"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="395" height="219"/>
+                                            <size key="maxSize" width="410" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Gz7-hW-D1e">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="ZsR-iT-hFj">
+                                    <rect key="frame" x="395" y="0.0" width="15" height="219"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7LT-cP-OUm">
+                                <rect key="frame" x="358" y="13" width="75" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QFy-X1-80h"/>
+                                    <constraint firstAttribute="width" constant="63" id="hdL-ed-EbU"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ttc-jZ-yVZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7LT-cP-OUm" firstAttribute="top" secondItem="Iy7-FQ-K6S" secondAttribute="bottom" constant="20" id="198-Sb-z9k"/>
+                            <constraint firstItem="Iy7-FQ-K6S" firstAttribute="leading" secondItem="g7i-oF-LSS" secondAttribute="leading" constant="20" id="58t-ye-w8D"/>
+                            <constraint firstItem="7LT-cP-OUm" firstAttribute="top" secondItem="Iy7-FQ-K6S" secondAttribute="bottom" constant="20" id="7iD-Ka-qZU"/>
+                            <constraint firstAttribute="trailing" secondItem="7LT-cP-OUm" secondAttribute="trailing" constant="23" id="DNP-py-QRt"/>
+                            <constraint firstItem="Iy7-FQ-K6S" firstAttribute="top" secondItem="g7i-oF-LSS" secondAttribute="top" constant="20" id="Ec6-yg-dwG"/>
+                            <constraint firstAttribute="trailing" secondItem="Iy7-FQ-K6S" secondAttribute="trailing" constant="20" id="F4G-kS-agL"/>
+                            <constraint firstAttribute="bottom" secondItem="7LT-cP-OUm" secondAttribute="bottom" constant="20" id="WK9-ZN-1cE"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="SrG-aa-AsU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="573"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="NSListViewTemplate" width="14" height="10"/>
+    </resources>
+</document>

@@ -647,7 +647,7 @@
                 </splitViewController>
                 <customObject id="Jfw-QB-93q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24" y="1351"/>
+            <point key="canvasLocation" x="24" y="1357"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ipP-v2-yla">

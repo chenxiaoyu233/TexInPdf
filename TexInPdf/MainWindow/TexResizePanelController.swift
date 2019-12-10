@@ -34,7 +34,7 @@ class TexResizePanelController: NSSplitViewController {
             NotificationCenter.default.addObserver(forName: NSNotification.Name("syncTexPanelWidth:pdfView"), object: nil, queue: nil) {
                 notification in
                 if let pdfView = notification.userInfo?["pdfView"] as! PDFView? {
-                    let texWidth = pdfView.rowSize(for: pdfView.currentPage!).width
+                    let texWidth = pdfView.rowSize(for: pdfView.currentPage!).width - 4
                     let totalWidth = pdfView.frame.size.width
                     self.splitView.setPosition((totalWidth - texWidth)/2.0 - 30, ofDividerAt: 0)
                     self.splitView.setPosition((totalWidth - texWidth)/2.0 + texWidth, ofDividerAt: 1)

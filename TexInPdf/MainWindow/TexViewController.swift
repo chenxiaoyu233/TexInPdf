@@ -26,6 +26,7 @@ class TexViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         setFont()
+        showCodeView()
     }
     
     func setFont() {
