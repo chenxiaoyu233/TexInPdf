@@ -91,12 +91,6 @@ class TexViewController: NSViewController {
         startCompiler(fileName)
     }
     
-    func Ccommand(command: String) {
-        let s = (command as NSString).utf8String
-        let cs = UnsafeMutablePointer<Int8>.init(mutating: s)
-        ExecuteCommand(cs)
-    }
-
     var pipe: Pipe?
     func startCompiler(_ fileName: String) {
         let compiler = Process()
