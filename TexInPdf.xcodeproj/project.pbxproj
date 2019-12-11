@@ -20,6 +20,7 @@
 		FF62F76D239FE64A00BE7A36 /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF62F76C239FE64A00BE7A36 /* Preference.storyboard */; };
 		FFE9881A2399275000A65AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA32393CF4300C1A4D2 /* Assets.xcassets */; };
 		FFE98825239B8D6500A65AFD /* TexResizePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */; };
+		FFED579523A1347E00649B68 /* LatexTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED579423A1347E00649B68 /* LatexTemplateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FF62F76C239FE64A00BE7A36 /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		FFE9881F2399373B00A65AFD /* TexInPdfDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TexInPdfDebug.entitlements; sourceTree = "<group>"; };
 		FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexResizePanelController.swift; sourceTree = "<group>"; };
+		FFED579423A1347E00649B68 /* LatexTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatexTemplateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				FF62F76C239FE64A00BE7A36 /* Preference.storyboard */,
 				FF5D2484239FEBB3009968F1 /* PrefWindowController.swift */,
+				FFED579423A1347E00649B68 /* LatexTemplateViewController.swift */,
 			);
 			path = PrefWindow;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				FFE98825239B8D6500A65AFD /* TexResizePanelController.swift in Sources */,
 				FF045AA02393CF4000C1A4D2 /* PDFViewController.swift in Sources */,
 				FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */,
+				FFED579523A1347E00649B68 /* LatexTemplateViewController.swift in Sources */,
 				FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */,
 				FF045A9E2393CF4000C1A4D2 /* AppDelegate.swift in Sources */,
 				FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */,

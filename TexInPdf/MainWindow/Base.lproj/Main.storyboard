@@ -23,7 +23,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <action selector="OpenPreferenceWindow:" target="Ady-hI-5gd" id="MRy-yH-0ga"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -527,15 +531,15 @@
                             <scrollView identifier="Code Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCw-Hc-snr">
                                 <rect key="frame" x="31" y="0.0" width="595" height="167"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="S0y-Lz-fT7">
-                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="J6u-wK-db8">
-                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="595" height="167"/>
+                                            <size key="minSize" width="580" height="167"/>
                                             <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -546,7 +550,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="PYS-Kd-wdA">
-                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
+                                    <rect key="frame" x="580" y="0.0" width="15" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -556,15 +560,15 @@
                             <scrollView identifier="Error Scroll View" hidden="YES" appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-8C-jRV">
                                 <rect key="frame" x="31" y="0.0" width="595" height="167"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Vgo-ut-YJs">
-                                    <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" smartInsertDelete="YES" id="dOY-Gw-a2x">
-                                            <rect key="frame" x="0.0" y="0.0" width="595" height="167"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <size key="minSize" width="595" height="167"/>
+                                            <size key="minSize" width="580" height="167"/>
                                             <size key="maxSize" width="595" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -575,7 +579,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2Qn-x0-WdN">
-                                    <rect key="frame" x="579" y="0.0" width="16" height="167"/>
+                                    <rect key="frame" x="580" y="0.0" width="15" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

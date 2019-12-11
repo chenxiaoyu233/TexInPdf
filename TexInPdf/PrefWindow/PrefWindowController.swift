@@ -15,6 +15,7 @@ class PrefWindowController: NSWindowController {
         super.windowDidLoad()
         
         collectToolBarItems()
+        LatexTemplateToolbarItemClicked(self)
     }
     
     var toolbarItems: [NSToolbarItem] = [NSToolbarItem].init()
@@ -31,5 +32,12 @@ class PrefWindowController: NSWindowController {
     
     @IBAction func LatexTemplateToolbarItemClicked(_ sender: Any) {
         toggleToolbarItems(0)
+        openLatexTemplateView()
     }
+    
+    func openLatexTemplateView() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Preference"), bundle: nil)
+        self.contentViewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("LatexTempateViewController")) as? NSViewController
+    }
+    
 }

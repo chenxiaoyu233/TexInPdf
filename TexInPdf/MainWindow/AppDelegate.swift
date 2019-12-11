@@ -10,8 +10,13 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
+    
+    override init() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Preference"), bundle: nil)
+        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferenceWindowController")) as! NSWindowController
+        self.preferenceWindowController = windowController
+        super.init()
+    }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -20,7 +25,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
+    
+    var preferenceWindowController: NSWindowController
+    @IBAction func OpenPreferenceWindow(_ sender: Any) {
+        self.preferenceWindowController.showWindow(self)
+    }
 
 }
 
