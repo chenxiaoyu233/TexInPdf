@@ -12,9 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     override init() {
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Preference"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("PreferenceWindowController")) as! NSWindowController
-        self.preferenceWindowController = windowController
+        self.preferenceWindowController = NewWindowController(storyboard: "Preference", identifier: "PreferenceWindowController")
         super.init()
     }
 

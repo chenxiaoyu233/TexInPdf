@@ -21,6 +21,7 @@
 		FFE9881A2399275000A65AFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF045AA32393CF4300C1A4D2 /* Assets.xcassets */; };
 		FFE98825239B8D6500A65AFD /* TexResizePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */; };
 		FFED579523A1347E00649B68 /* LatexTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED579423A1347E00649B68 /* LatexTemplateViewController.swift */; };
+		FFF1140E23A141EE00E5C5B3 /* AuxFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF1140D23A141EE00E5C5B3 /* AuxFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		FFE9881F2399373B00A65AFD /* TexInPdfDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TexInPdfDebug.entitlements; sourceTree = "<group>"; };
 		FFE98824239B8D6500A65AFD /* TexResizePanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexResizePanelController.swift; sourceTree = "<group>"; };
 		FFED579423A1347E00649B68 /* LatexTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatexTemplateViewController.swift; sourceTree = "<group>"; };
+		FFF1140D23A141EE00E5C5B3 /* AuxFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		FF045A9C2393CF4000C1A4D2 /* TexInPdf */ = {
 			isa = PBXGroup;
 			children = (
+				FFF1140C23A141D600E5C5B3 /* AuxTools */,
 				FF5D2487239FF003009968F1 /* PrefWindow */,
 				FF5D2486239FEFF2009968F1 /* MainWindow */,
 				FF5D2488239FF028009968F1 /* Resources */,
@@ -172,6 +175,14 @@
 				FF045AA32393CF4300C1A4D2 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFF1140C23A141D600E5C5B3 /* AuxTools */ = {
+			isa = PBXGroup;
+			children = (
+				FFF1140D23A141EE00E5C5B3 /* AuxFunctions.swift */,
+			);
+			path = AuxTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				FF045AA02393CF4000C1A4D2 /* PDFViewController.swift in Sources */,
 				FF3DD64E23977F1F000451BC /* TexViewController.swift in Sources */,
 				FFED579523A1347E00649B68 /* LatexTemplateViewController.swift in Sources */,
+				FFF1140E23A141EE00E5C5B3 /* AuxFunctions.swift in Sources */,
 				FF3DD65823979316000451BC /* PDFOverTexSplitViewController.swift in Sources */,
 				FF045A9E2393CF4000C1A4D2 /* AppDelegate.swift in Sources */,
 				FF3DD64C23977875000451BC /* MainWindowController.swift in Sources */,

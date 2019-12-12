@@ -25,8 +25,7 @@ class MyPDFDocument: NSDocument {
 
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        let windowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("Main Window Controller")) as! NSWindowController
+        let windowController = NewWindowController(storyboard: "Main", identifier: "Main Window Controller")
         addWindowController(windowController)
         if let WC = windowController as? MainWindowController {
             WC.PDFObject = pdfDocument

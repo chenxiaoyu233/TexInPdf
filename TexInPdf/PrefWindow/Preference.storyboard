@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView translatesAutoresizingMaskIntoConstraints="NO" id="yr4-Dh-AQ2">
-                                <rect key="frame" x="-1" y="-4" width="493" height="314"/>
+                                <rect key="frame" x="-1" y="40" width="493" height="270"/>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Header" identifier="" id="eCm-Bd-eVL" userLabel="Header">
@@ -68,26 +68,26 @@
                                                 <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYc-DY-pPl">
                                                     <rect key="frame" x="0.0" y="0.0" width="473" height="268"/>
                                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="DW1-BM-5tk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="458" height="268"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="473" height="268"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="dVp-ag-zMm">
-                                                                <rect key="frame" x="0.0" y="0.0" width="458" height="268"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="473" height="268"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="458" height="268"/>
-                                                                <size key="maxSize" width="458" height="10000000"/>
+                                                                <size key="minSize" width="473" height="268"/>
+                                                                <size key="maxSize" width="473" height="10000000"/>
                                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             </textView>
                                                         </subviews>
                                                     </clipView>
-                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="xGG-4q-JJV">
+                                                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="xGG-4q-JJV">
                                                         <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
-                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="i5j-Vd-DZS">
-                                                        <rect key="frame" x="458" y="0.0" width="15" height="268"/>
+                                                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="i5j-Vd-DZS">
+                                                        <rect key="frame" x="457" y="0.0" width="16" height="268"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -102,32 +102,32 @@
                                     </tabViewItem>
                                     <tabViewItem label="Footer" identifier="" id="2sk-Jp-zWU" userLabel="Footer">
                                         <view key="view" id="ftw-2n-tZH">
-                                            <rect key="frame" x="10" y="33" width="473" height="268"/>
+                                            <rect key="frame" x="10" y="33" width="473" height="224"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-nY-jE9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="473" height="268"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="473" height="224"/>
                                                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="2ZM-Up-tnF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="458" height="268"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="473" height="224"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" smartInsertDelete="YES" id="f9y-0I-bwr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="458" height="268"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="473" height="224"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                <size key="minSize" width="458" height="268"/>
-                                                                <size key="maxSize" width="458" height="10000000"/>
+                                                                <size key="minSize" width="473" height="224"/>
+                                                                <size key="maxSize" width="473" height="10000000"/>
                                                                 <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             </textView>
                                                         </subviews>
                                                     </clipView>
-                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8V4-9n-mze">
+                                                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="8V4-9n-mze">
                                                         <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
-                                                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="nGB-5b-n3J">
-                                                        <rect key="frame" x="458" y="0.0" width="15" height="268"/>
+                                                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nGB-5b-n3J">
+                                                        <rect key="frame" x="457" y="0.0" width="16" height="224"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </scroller>
                                                 </scrollView>
@@ -142,14 +142,31 @@
                                     </tabViewItem>
                                 </tabViewItems>
                             </tabView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AcO-Rv-8zh">
+                                <rect key="frame" x="399" y="13" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Zr-wl-Krr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ApplyButtonClicked:" target="AW1-21-3JJ" id="p4j-dj-6kk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="yr4-Dh-AQ2" secondAttribute="trailing" constant="6" id="D4c-eg-F7c"/>
-                            <constraint firstItem="yr4-Dh-AQ2" firstAttribute="top" secondItem="g7i-oF-LSS" secondAttribute="top" constant="6" id="DbI-zV-QVg"/>
-                            <constraint firstItem="yr4-Dh-AQ2" firstAttribute="leading" secondItem="g7i-oF-LSS" secondAttribute="leading" constant="6" id="Nry-dX-DKx"/>
-                            <constraint firstAttribute="bottom" secondItem="yr4-Dh-AQ2" secondAttribute="bottom" constant="6" id="QWV-vV-beS"/>
+                            <constraint firstAttribute="bottom" secondItem="yr4-Dh-AQ2" secondAttribute="bottom" constant="50" id="4Nc-dN-iXN"/>
+                            <constraint firstAttribute="bottom" secondItem="AcO-Rv-8zh" secondAttribute="bottom" constant="20" id="Kmu-nv-IWc"/>
+                            <constraint firstItem="AcO-Rv-8zh" firstAttribute="top" secondItem="yr4-Dh-AQ2" secondAttribute="bottom" constant="9" id="NcC-mx-8kf"/>
+                            <constraint firstAttribute="trailing" secondItem="yr4-Dh-AQ2" secondAttribute="trailing" constant="6" id="bM4-aU-Pn0"/>
+                            <constraint firstItem="yr4-Dh-AQ2" firstAttribute="leading" secondItem="g7i-oF-LSS" secondAttribute="leading" constant="6" id="tgV-4U-OMi"/>
+                            <constraint firstItem="yr4-Dh-AQ2" firstAttribute="top" secondItem="g7i-oF-LSS" secondAttribute="top" constant="6" id="uEC-ka-qeH"/>
+                            <constraint firstAttribute="trailing" secondItem="AcO-Rv-8zh" secondAttribute="trailing" constant="23" id="vdW-CE-ahR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LatexFooterTextView" destination="f9y-0I-bwr" id="Teb-tq-8Qg"/>
+                        <outlet property="LatexHeaderTextView" destination="dVp-ag-zMm" id="zRR-SF-nyv"/>
+                    </connections>
                 </viewController>
                 <customObject id="SrG-aa-AsU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
