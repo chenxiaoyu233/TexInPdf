@@ -49,7 +49,10 @@ class TexViewController: NSViewController {
     
     @IBAction func compileButtonClicked(_ sender: NSButton) {
         showErrorView()
-        CompileNote()
+        let latexHeader = UserDefaults.standard.value(forKey: "LatexHeaderTextView.string") as? String ?? ""
+        let latexFooter = UserDefaults.standard.value(forKey: "LatexFooterTextView.string") as? String ?? ""
+        let content = latexHeader + codeView.string + latexFooter
+        CompileNote(content: content)
     }
     func showPDFView() {
         pdfView.isHidden = false
@@ -75,11 +78,11 @@ class TexViewController: NSViewController {
         pdfView.isHidden = true
     }
     
-    func CompileNote() {
+    func CompileNote(content: String) {
         let name = /*NSTemporaryDirectory()*/ "/Users/chenxiaoyu/Desktop/test/" + "test"
         let fileName = name + ".tex"
         let file = URL(fileURLWithPath: fileName, isDirectory: false)
-        do {try codeView.string.write(to: file, atomically: true, encoding: .utf8)}
+        do {try content.write(to: file, atomically: true, encoding: .utf8)}
         catch {
             errorView.string = "[Fail] can not write code to file\n"
             errorView.string += error.localizedDescription
