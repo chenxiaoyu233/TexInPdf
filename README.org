@@ -1,0 +1,25 @@
+
+* Background
+  Recently, I am reading a really tough paper published on STOC in this year.
+  I'm really slow to make a progress on it (I spend nearly a month to read a 12 page paper. so, very upset).
+  The main issue is that I can't read while taking some notes on PDF simultaneously.
+  The notes I mentioned here mainly refers to math equations, i.e. I want to take notes with latex.
+  But I have not found any useable applications of this type on mac yet.
+  So, I plan to make my own PDF reader, which supports writting latex note inside a PDF file.
+
+* Progress
+** Stop Developing
+   Sadly, I find that reading paper with hand writting notes gives me a better understanding of the paper.
+   So, in the future, I might just take notes with my ipad.
+** The progress that I have made
+   However, I have alreadly made a fully functional PDF reader with could let you add notes to it using latex.
+   But it is crudely maded, and have a lot of space to imporve.
+** Why should I keep this repo   
+   The cocoa development is really hard for me, since I'm not familiar with swift and xcode.
+   And it tooks me several days to build this app.
+   The time that I spent on this project is not wasted, because this project shows the basic idea of how to develop such a pdf note taker on mac.
+   So, it could be seen as a reference, for if I want to develop some cocoa apps on mac in the future.
+   Or, if someday, I change my mind and think that taking latex notes in pdf is better than hand writting notes on ipad, then I will go back continue working on this project.
+   
+* Show Case
+  [[file:pic/showcase.gif]]
