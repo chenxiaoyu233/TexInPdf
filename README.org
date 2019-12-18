@@ -24,4 +24,4 @@
 * Show Case
   [[file:pic/showcase.gif]]
   You could see a vedio version of this showcase on bilibili
-  [[https:www.bilibili.com/video/av79787447/]]
+  [[https://www.bilibili.com/video/av79787447/]]
